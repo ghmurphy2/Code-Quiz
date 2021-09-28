@@ -14,6 +14,7 @@ var nameTrack = document.querySelectorAll(nameTrack);
 var scoreTrack  = document.querySelectorAll(scoreTrack);
 //start and end screen
 // write body of quiz in function, better way to populate?
+//hide elements or replace?
 
 quizBody = [{
     qN: 1,
@@ -26,12 +27,6 @@ quizBody = [{
     ],
     correct:
       "A",
-  },
+  },]
 //place holder question
-]
 
-
-
-
-
-}
