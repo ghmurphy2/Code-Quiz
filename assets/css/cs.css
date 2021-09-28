@@ -1,19 +1,27 @@
-.body{
+body{
   background-color: cornflowerblue;
   color: black;
+  font-size: 40px;
 }
-.choice-container{
+/* choice container for borders and area select */
+.choice-container {
   display: flex;
-  width: 300px;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 100px;
   border-radius: 10px;
-  background-color: burlywood;
-
+  background-color: white;
+  font-size: large;
+  min-width: 200px;
+} 
+.choice-text {
+  font-size: 30px;
 
 }
-
-.startBtn button {
-  font-size: 50px;
-  color: red;
-
-} 
 /* media screen for resize */
+@media screen and (max-width:786px) {
+  .choice-container{ 
+    min-width: 200px;
+  }
+  
+}

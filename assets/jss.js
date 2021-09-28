@@ -14,13 +14,13 @@ let questionsIndex = {}
 //timer needed! interact with question parse
 quizBody = [{
   
-  qN: 1,
+  questionNumber: 1,
   question: "HTML is responsible for what part of a webpage?",
 
-    answer1: "It defines the meaning and structure of web content.",
-    answer2: "It styles a webpage.",
-    answer3: "It runs functions and is reponsible for the 'Logic' of a page.",
-    answer4: "HTML is not used in webpage design.",
+    choice1: "It defines the meaning and structure of web content.",
+    choice2: "It styles a webpage.",
+    choice3: "It runs functions and is reponsible for the 'Logic' of a page.",
+    chocie4: "HTML is not used in webpage design.",
     correct: "It defines the meaning and structure of web content.",
 
 
