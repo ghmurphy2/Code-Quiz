@@ -7,16 +7,17 @@ body{
 	font-size: 40px;
 	font-family: Arial, Helvetica, sans-serif;
 	color: var(--text-color);
+    background-color: burlywood;
 }
   /*add base options for selection box and add zoom to focus  */
 @media screen and (max-width: 996px) {
-    article{
+    body{
       flex: 1 1 500px;
     }
 }
 
   @media screen and (max-width: 768px) {
-    article{ 
+    body{ 
         flex: 1 1 300px;
     }
 }
