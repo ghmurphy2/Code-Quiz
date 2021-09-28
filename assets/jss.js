@@ -52,4 +52,32 @@ nextQuestion = ()=> {
 
     correctAnswers = true
 }
+
+choices.forEach(choice =>{
+  choice.addEventListener("click", e =>){
+  if(!correctAnswers) return
+
+  correctAnswers = false
+  const selectedChoice = e.target
+  const selectedAnswer = selectedChoice.dataset['number']
+  
+  let classToApply = selectedAnswer.answer ? 'correct' :
+  'incorrect'
+
+  if(classToApply === ' correct'){
+    incrementScore ++
+  }
+  seclectedChoice.parentElement.classList.classToApply
+//time increment?
+  setTimeout(() => {
+  selectedChoice.parentElement.classList.remove(classToApply),)
+  nextQuestion()
+}, 1000);
+}
     //   broken deploy, assest visible
+
+    incrementScore = num => {
+      score +=numscoreText.innerText = score
+    }
+
+    quizBegin()
