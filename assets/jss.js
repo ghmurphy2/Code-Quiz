@@ -1,12 +1,9 @@
 var questionIndex = [];
 // add index to push to
 var answerIndex = [];
-var correctTotal = [];
 //use array length to total and score
 var timerCount = document.querySelectorAll(timerCount);
 var startBtn = document.querySelectorAll(startBtn);
-
-var scoreTotal = document.querySelectorAll(totalCorrect)
 //establish questions
 var startScreen = document.querySelectorAll(startScreen);
 var endScreen  = document.querySelectorAll(endScreen);
@@ -15,10 +12,6 @@ var scoreTrack  = document.querySelectorAll(scoreTrack);
 //start and end screen
 // write body of quiz in function, better way to populate?
 //hide elements or replace?
-
-let questionIndex = 0;
-let scoreTotal = 0;
-let timerCount = 0;
 
 quizBody = [{
     qN: 1,
@@ -127,25 +120,6 @@ quizBody = [{
     correct:
       "A",
   },]
-
-  startBtn.addEventListener("click", function () {
-    let timerInterval = setInterval(timerFunc, 1000);
-    function timerFunc() {
-      secondsLeft = secondsLeft - 1;
-      timerText.textContent = secondsLeft + "s";
-      if (secondsLeft <= 0) {
-        document.getElementById('fail').style.display = "block";
-        setTimeout(function(){
-          document.getElementById('fail').style.display = "none";
-        }, 1000)
-        toEndScreen();
-        clearInterval(timerInterval);
-        return;
-      } else {
-        loadQuizItems();
-      }
-    }
-  });
     //place holder question
     function deployQuiz() {
         document.querySelectorAll("scoreTrack").style.display = "none";
