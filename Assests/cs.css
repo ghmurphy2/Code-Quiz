@@ -1,0 +1,17 @@
+:root{
+    --background-color: rgb(94, 103, 112);
+    --text-color:rgb(255, 255, 255);
+}
+  
+@media screen and (max-width: 996px) {
+    article{
+      flex: 1 1 500px;
+    }
+}
+
+  
+  @media screen and (max-width: 768px) {
+    article{ 
+        flex: 1 1 300px;
+    }
+}
