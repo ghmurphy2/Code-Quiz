@@ -3,38 +3,40 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./Assets/cs.css">
     <title>Coding Quiz</title>
   </head>
 <!-- add start confirm and timer on track -->
   <body>
     <header>
-      <h1> Click the correct answer below</h1>
-    
+      <h1> Click the correct answer below!</h1>
     </header>
     <br>
 
     <main>
       <section>
-        <h2>Placeholder</h2>
+        <h2>Click  below to start the quiz, and answer carefully! Each incorrect answer will subtract time.</h2>
+        <button id = "startBtn"><div id = "start"></div></button>
       </section>
-
+<!-- base level to place answers in jss -->
       <section id="answerOptions">
         <h2>Questions placeholder</h2>
         <ul class="highlighted-text">
-          <li>A option </li>
-          <li>B option </li>
-          <li>C option </li>
-          <li>D option</label>
-          
+          <button id = "aAnswer"><div id = "answerI"></div></button>
+          <button id = "bAnswer"><div id = "answerI"></div></button>
+          <button id = "cAnswer"><div id = "answerI"></div></button>
+          <button id = "dAnswer"><div id = "answerI"></div></button>
+          <!-- sytle as answerOptions -->
         </ul>
-      </form>
         <br>
       </section>
     </main>
 
     <footer>
+        <button id = "highScore">Click here to check the high scores!</button>
+        <!-- add fixed footer? check size -->
     </footer>
+    <script src="jss.js"></script>
   </body>
 
 </html>
