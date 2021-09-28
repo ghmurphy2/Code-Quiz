@@ -13,16 +13,19 @@ let questionsIndex = {}
 //changed array structure
 //timer needed! interact with question parse
 quizBody = [{
-    qN: 1,
-    question: "HTML is responsible for what part of a webpage?",
+  
+  qN: 1,
+  question: "HTML is responsible for what part of a webpage?",
 
-      answer1: "It defines the meaning and structure of web content.",
-      answer2: "It styles a webpage.",
-      answer3: "It runs functions and is reponsible for the 'Logic' of a page.",
-      answer4: "HTML is not used in webpage design.",
-      correct: "It defines the meaning and structure of web content.",
-},]
-    
+    answer1: "It defines the meaning and structure of web content.",
+    answer2: "It styles a webpage.",
+    answer3: "It runs functions and is reponsible for the 'Logic' of a page.",
+    answer4: "HTML is not used in webpage design.",
+    correct: "It defines the meaning and structure of web content.",
+
+
+
+  },]
 let scoreTotal = 100
 quizBegin = () =>{
   questionCount = 0
@@ -63,7 +66,7 @@ choices.forEach(choice =>{
   
   let classToApply = selectedAnswer.answer ? 'correct' :
   'incorrect'
-
+  }
   if(classToApply === ' correct'){
     incrementScore ++
   }
