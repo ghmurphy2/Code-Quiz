@@ -9,17 +9,10 @@ body{
 	color: var(--text-color);
     background-color: burlywood;
 }
-  /*add base options for selection box and add zoom to focus  */
-@media screen and (max-width: 996px) {
-    body{
-      flex: 1 1 500px;
-    }
-}
 
-  @media screen and (max-width: 768px) {
-    body{ 
-        flex: 1 1 300px;
-    }
-}
+.startBtn button {
+  font-size: 50px;
+  color: red;
 
+} 
 /* media screen for resize */
