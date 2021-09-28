@@ -18,14 +18,17 @@
     <main>
 <!-- base level to place answers in jss -->
       <section id="answerOptions">
-        <ul class="highlighted-text">
-          <button id = "aAnswer"><div id = "answerI"></div></button>
-          <button id = "bAnswer"><div id = "answerI"></div></button>
-          <button id = "cAnswer"><div id = "answerI"></div></button>
-          <button id = "dAnswer"><div id = "answerI"></div></button>
-          <!-- sytle as answerOptions -->
-        </ul>
-        <br>
+        <div id = "questionText">Question</div>
+        <div class="choice-options">
+          <p class="choice1">1</p>
+          <div class="choiceText" data-number ="1">answer1</div>
+          <p class="choice2">2</p>
+          <div class="choiceText" data-number ="2">answer2</div>
+          <p class="choice3">3</p>
+          <div class="choiceText" data-number ="3">answer3</div>
+          <p class="choice4">4</p>
+          <div class="choiceText" data-number ="4">answer4</div>
+        </div>
       </section>
       <div class="countDownText">Time Remaining</div>
       <div class="timerSec">300</div>
