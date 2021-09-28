@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/cs.css">
+    <title>Coding Quiz</title>
+  </head>
+<!-- add start confirm and timer on track -->
+  <body>
+    <div class = 'container'>
+    <header>
+      <h1> Click the correct answer below!</h1>
+    </header>
+    <br>
+
+    <main>
+      <section>
+        <div class = "startBtn"><button>Begin the quiz</button></div>
+        <div class = "Info">Click  above to start the quiz, and answer carefully! Each incorrect answer will subtract time.</div>
+      </section>
+<!-- base level to place answers in jss -->
+      <section id="answerOptions">
+        <ul class="highlighted-text">
+          <button id = "aAnswer"><div id = "answerI"></div></button>
+          <button id = "bAnswer"><div id = "answerI"></div></button>
+          <button id = "cAnswer"><div id = "answerI"></div></button>
+          <button id = "dAnswer"><div id = "answerI"></div></button>
+          <!-- sytle as answerOptions -->
+        </ul>
+        <br>
+      </section>
+      <div class="countDownText">Time Remaining</div>
+      <div class="timerSec">300</div>
+    </main>
+
+    <footer>
+        <button id = "highScore">Click here to check the high scores!</button>
+        <!-- add fixed footer? check size -->
+    </footer>
+    <script src="./assets/jss.js"></script>
+    </div>
+  </body>
+
+</html>

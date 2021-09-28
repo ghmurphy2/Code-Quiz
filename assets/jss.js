@@ -11,7 +11,7 @@ let currectAnswers = {}
 let availableQuestion = {}
 let questionsIndex = {}
 //changed array structure
-
+//timer needed! interact with question parse
 quizBody = [{
     qN: 1,
     question: "HTML is responsible for what part of a webpage?",
