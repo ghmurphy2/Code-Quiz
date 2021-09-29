@@ -4,8 +4,8 @@ const highScoreText = document.querySelector('#high-score-display')
 //parse score from local
 
 function displayHighScore() {
-    highScoreText.innerHTML = ' ',
-    let 
+    highScoreText.innerHTML = ' ';
+    let highScoreText = "highscore"
 }
 
 displayHighScore()
