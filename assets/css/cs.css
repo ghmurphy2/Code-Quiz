@@ -16,7 +16,6 @@ body{
 } 
 .choice-text {
   font-size: 30px;
-
 }
 /* media screen for resize */
 @media screen and (max-width:786px) {

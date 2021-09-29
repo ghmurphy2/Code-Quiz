@@ -1,86 +1,165 @@
-const question = document.querySelectorAll("question");
-const choices = Array.from(document.querySelectorAll(".choiceText"));
-const progressText = document.querySelectorAll('progressText');
-const scoreText = document.querySelectorAll('#score')
+// grabing dom elements
+const highScoreEl = document.querySelector('#high-score');
+const timeRemainingEl = document.querySelector('#time-remaining');
+const startScreenEl = document.querySelector('#start-screen');
+const quizScreenEl = document.querySelector('#quiz-screen');
+const endScreenEl = document.querySelector('#end-screen');
+const finalScoreEl = document.querySelector('#final-score');
+const questionTextEl = document.querySelector('#question-text');
+const quizContentEl = document.querySelector('#quiz-content');
+const startQuizBtn = document.querySelector('#start-quiz');
+const countDownEl = document.querySelector('#count-down-text');
+const submitBtn = document.querySelector('#submit');
+const initialEl = document.querySelector('#initials');
 //start and end screen
 // write body of quiz in function, better way to populate?
 //hide elements or replace?
-let questionNumber = {}
-let currentQuestion ={}
-let currectAnswers = {}
-let availableQuestion = {}
-let questionsIndex = {}
+
+// declared variables
+let timeRemaining = 120
+let questionIndex = 0
+let timerID
 //changed array structure
 //timer needed! interact with question parse
-quizBody = [{
-  
-  questionNumber: 1,
-  question: "HTML is responsible for what part of a webpage?",
-
-    choice1: "It defines the meaning and structure of web content.",
-    choice2: "It styles a webpage.",
-    choice3: "It runs functions and is reponsible for the 'Logic' of a page.",
-    chocie4: "HTML is not used in webpage design.",
-    correct: "It defines the meaning and structure of web content.",
 
 
 
-  },]
-let scoreTotal = 100
-quizBegin = () =>{
-  questionCount = 0
-  score = 0
-  availableQuestion = [...questions]
+quizScreenEl.style.display = 'none';
+endScreenEl.style.display = 'none';
+
+const quizBody = [
+  {
+    question: 'HTML is responsible for what part of a webpage?',
+
+    choiceOptions: ['It defines the meaning and structure of web content.', 'It styles a webpage.', 'It runs functions and is reponsible for the \'Logic\' of a page.', 'HTML is not used in webpage design.'],
+    correct: 'It defines the meaning and structure of web content.',
+  },
+  {
+    question: "What are functions(in regard to computer science)?",
+    choiceOptions: [
+      "Functions are a minute area of illumination on a display screen, one of many from which an image is composed.",
+      "They appear whole on web pages as seen images",
+      "They control a junction, and allow quick access to information.",
+      "Functions are a set of instructions bundled together to achieve a specific outcome.",
+    ],
+    correct:
+      "Functions are a set of instructions bundled together to achieve a specific outcome.",
+
+  },
+
+  {
+    question: "What is a for-loop?",
+    choiceOptions: [
+      "A for-loop is a variable that can be assigned multiple values.",
+      "A for-loop is a unit of color that is reused on a web page.",
+      "A for-loop is a control flow statement for specifying iteration, which allows code to be executed repeatedly.",
+      "A for-loop is an image on a webpage that moves dynamically.",
+    ],
+    correct:
+      "A for-loop is a control flow statement for specifying iteration, which allows code to be executed repeatedly."
+  },
+
+  {
+    question: "What is an array?",
+    choiceOptions: [
+      "An array is a data structure that contains individul characters written together in a single combined unit.",
+      "An array is a data structure consisting of a collection of elements, each identified by at least one array index or key.",
+      "An array is a physical structure used for transmitting information between computers or servers.",
+      "An array is a data structure that establishes a connection between multiple variables in pairs.",
+    ],
+    correct:
+      "An array is a data structure consisting of a collection of elements, each identified by at least one array index or key.",
+  },
+
+  {
+
+    question: "What shortcut allows the placement of a 'comment' in HTML, CSS, and Javascript?",
+    choiceOptions: [
+      " Alt + 'G'",
+      "Ctrl + '/'",
+      "Ctrl + '\'",
+      "Alt + 'F4'",
+    ],
+    correct:
+      "Ctrl + /",
+
+  }]
+
+
+
+function startQuiz() {
+  timerID = setInterval(clockTick, 1000)
+  startScreenEl.style.display = 'none';
+  quizScreenEl.style.display = 'block';
+
   nextQuestion()
 }
 
-let questionMax = 10
-nextQuestion = ()=> {
-  if(availableQuestion.length === 0 || questionCount > availableQuestion){
-    localStorage.setItem('currentScore' , score)
-    return window.location.assign('/end.html')
-    
-  }
-  questionCount ++
-  const availableQuestion = Math.floor(math.random() * availableQuestion.length)
-  currentQuestion = availableQuestion[questionNumber]
-  question.innerText = currentQuestion.question
-// pull random and remove
-  choices.forEach(choice => {
-    const number = choice.dataset['number']
-    choice.innerText = currentQuestion['choice' + number]
-  }
-    )
-    availableQuestion.splice(questionsIndex, 1)
 
-    correctAnswers = true
+
+function nextQuestion() {
+  quizContentEl.innerHTML = ' '
+  let currentQuestion = quizBody[questionIndex]
+  questionTextEl.textContent = currentQuestion.question
+  currentQuestion.choiceOptions.forEach(element => {
+    let tempBtn = document.createElement('button')
+    tempBtn.textContent = element
+    tempBtn.setAttribute('value', element)
+    tempBtn.setAttribute('class', 'answerbutton')
+    tempBtn.onclick = answerCheck
+    quizContentEl.appendChild(tempBtn)
+
+  });
+
 }
 
-choices.forEach(choice =>{
-  choice.addEventListener("click", e =>){
-  if(!correctAnswers) return
+function answerCheck() {
+  const selectedAnswer = this.value
+  const correctAnswer = quizBody[questionIndex].correct
+  questionIndex++
 
-  correctAnswers = false
-  const selectedChoice = e.target
-  const selectedAnswer = selectedChoice.dataset['number']
-  
-  let classToApply = selectedAnswer.answer ? 'correct' :
-  'incorrect'
+  if (selectedAnswer !== correctAnswer) {
+    timeRemaining -= 10
   }
-  if(classToApply === ' correct'){
-    incrementScore ++
+  if (questionIndex === quizBody.length) {
+    endQuiz()
   }
-  seclectedChoice.parentElement.classList.classToApply
-//time increment?
-  setTimeout(() => {
-  selectedChoice.parentElement.classList.remove(classToApply),)
-  nextQuestion()
-}, 1000);
+  else {
+    nextQuestion()
+  }
 }
-    //   broken deploy, assest visible
 
-    incrementScore = num => {
-      score +=numscoreText.innerText = score
-    }
 
-    quizBegin()
+
+function endQuiz() {
+  quizScreenEl.style.display = 'none';
+  endScreenEl.style.display = 'block';
+  clearInterval(timerID)
+  finalScoreEl.textContent = timeRemaining 
+  countDownEl.style.display = 'none';
+
+}
+
+function clockTick() {
+  timeRemaining--
+  timeRemainingEl.textContent = timeRemaining
+  if (timeRemaining <= 0) {
+    endQuiz()
+  }
+}
+
+function saveHighScore(){
+  const initials = initialEl.value 
+  let highScores = JSON.parse(localStorage.getItem("highscores")) || [];
+  let newScore = { 
+    initials:initials,
+    score:timeRemaining
+  }
+  highScores.push(newScore)
+  localStorage.setItem('highscores', JSON.stringify(highScores))
+}
+
+
+startQuizBtn.onclick = startQuiz
+
+submitBtn.onclick = saveHighScore
