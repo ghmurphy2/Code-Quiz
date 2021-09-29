@@ -11,6 +11,7 @@ const startQuizBtn = document.querySelector('#start-quiz');
 const countDownEl = document.querySelector('#count-down-text');
 const submitBtn = document.querySelector('#submit');
 const initialEl = document.querySelector('#initials');
+const timerBarText = document.querySelector('#top-bar')
 //start and end screen
 // write body of quiz in function, better way to populate?
 //hide elements or replace?
@@ -26,6 +27,7 @@ let timerID
 
 quizScreenEl.style.display = 'none';
 endScreenEl.style.display = 'none';
+
 
 const quizBody = [
   {

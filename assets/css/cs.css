@@ -14,13 +14,23 @@ body{
   font-size: large;
   min-width: 200px;
 } 
-.choice-text {
-  font-size: 30px;
-}
 /* media screen for resize */
 @media screen and (max-width:786px) {
   .choice-container{ 
     min-width: 200px;
   }
   
+}
+button{
+    background-color:whitesmoke; 
+    font-size: 30px;
+    border:1px solid; 
+    border-color: black; 
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: white;
+    min-width: 200px;
+    padding-top: 15px;
+    margin: 15px;
 }

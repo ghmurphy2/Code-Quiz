@@ -21,16 +21,23 @@ Deployed link:
 ​
 
 ​
-
+## Technologies
 ​
+Project is created with:
+​
+- CSS
+- Javascript
+- HTML
+​
+
 ## Summary
 ​
-- This project is a mock-CRM for a start-up/small brewery company. 
+- ​This project uses Javascript to populate choice buttons which are styled in css. High scores are saved in local storage and displayed on a high score screen
 ​
 ​
 ## Authors
 ​
--Gavin Murphy
+- Gavin Murphy
 ​
 ## License
 ​
