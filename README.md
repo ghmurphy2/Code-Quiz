@@ -4,12 +4,7 @@
 ​
 - [General info](#General-Info)
 - [Technologies](#Technologies)
-- [Containers](#Containers)
-- [Deployment](#Deployment)
-- [Code Overview](#Code-Overview)
 - [Summary](#Summary)
-- [CSS style](#CSS-style)
-- [Routing Explained](#Routing-Explained)
 ​
 ​
 ## General-Info
@@ -31,6 +26,8 @@ Project is created with:
 ​
 
 ## Summary
+
+![Image](assets/quiz.png)
 ​
 - ​This project uses Javascript to populate choice buttons which are styled in css. High scores are saved in local storage and displayed on a high score screen
 ​
